@@ -1,0 +1,45 @@
+Note: The database was 'created' in Postgres using pgadmin4 built-in function.
+So, the SQL command for CREATE database is not present in the SQL file.
+
+We have seven tables in total:
+1. Passengers
+2. Cities
+3. Payments
+4. Seat_Classes
+5. Flights
+6. Seats
+7. Reservations
+
+In the end of the SQL file, there are functions given to view the information joining the above tables
+in different combinations, and also the CRUD + other practical stored procedures.
+
+For the ERD and DFD, they were bigger than the screen. So instead of taking pictures, I uploaded the draw.io files.
+
+
+Relationships b/w the Tables:
+
+One-to-Many:
+Cities -> Flights (origin)
+Cities -> Flights (destination)
+Passengers -> Payments
+Passengers -> Reservations
+Seat_Classes -> Seats
+Flights -> Seats
+Flights -> Reservations
+
+Many-to-One:
+Flights -> Cities (origin)
+Flights -> Cities (destination)
+Payments -> Passengers
+Reservations -> Passengers
+Seats -> Seat_Classes
+Seats -> Flights
+Reservations -> Flights
+
+One-to-One:
+Reservations -> Payments
+Reservations -> Seats
+
+Composite-key Relationships:
+Flights -> Seats (multi-column)
+Reservations -> Seats (multi-column)
